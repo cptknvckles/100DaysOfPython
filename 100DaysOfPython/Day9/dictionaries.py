@@ -21,7 +21,31 @@ dog_dict = {
 # dog_dict["GSD"] = "Odin"
 # print(dog_dict["GSD"])
 #loop through a dict
+#--------------------------------------------------#
+# Nesting lists in Dict, and Nesting Dicts in Dict #
+#__________________________________________________#
 
+travel_blog = {
+    "France" : ["Paris", "Cafe", "Baguette"], #nested list
+    "Germany" : "Berlin",
+    "USA" : {
+        "cities_visited" : ["Milwaukee", "Chicago", "Maine", "Cranton"], "total_visits" : 13
+        }
+}
+# print(travel_blog["USA"])
+#nesting a dict inside a list
+travel_log = [
+    {
+        "country" : "France", 
+        "cities_visited" : ["Paris", "Cafe", "Baguette"],
+        "times_visited" : 12
+    },
+    {
+        "country" : "USA", 
+        "cities_visited" : ["Milwaukee", "Chicago", "Maine", "Cranton"],
+        "times_visited" : 89
+    }
+]
 
-
+print(travel_log[1]["times_visited"])
 
