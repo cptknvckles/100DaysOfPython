@@ -6,14 +6,30 @@ dog_dict = {
     "Big Red Dog" : "Clifford",
     "Retreiver" : "Rusty"
 }
-#userSearch = input("What key are you looking for? ")
-# for i in dog_dict[1] : 
-#     i = userSearch
-#     print(i)
-# print(dog_dict["GSD"])
+dog_dict["Shitzu"] = "Greggory"
+def entry_search():
+    userSearch = input("What breed are you looking for?: ")
+    if userSearch in dog_dict:
+        name = dog_dict[userSearch]
+        print(f"We found a match with {userSearch}")
+        print(f"Name(s) on file for {userSearch}'s: {name}")
+        search_again = input("Want to search again?(Y/n): ").lower()
+        if search_again == "y":
+            entry_search()
+        else:
+            print("Goodbye")
+    else:
+        print(f"No records match {userSearch}")
+        search_again = input("Want to search again?(Y/n): ").lower()
+        if search_again == "y":
+            entry_search()
+        else:
+            print("Goodbye")
+entry_search()
+
+
 #add to the dictionary
-# dog_dict["Shitzu"] = "Greggory"
-# print(dog_dict)
+#print(dog_dict)
 #wipe existing dict
 # dog_dict = {}
 # print(dog_dict)
@@ -35,17 +51,28 @@ travel_blog = {
 # print(travel_blog["USA"])
 #nesting a dict inside a list
 travel_log = [
-    {
-        "country" : "France", 
-        "cities_visited" : ["Paris", "Cafe", "Baguette"],
-        "times_visited" : 12
-    },
-    {
-        "country" : "USA", 
-        "cities_visited" : ["Milwaukee", "Chicago", "Maine", "Cranton"],
-        "times_visited" : 89
-    }
+{
+  "country": "France",
+  "visits": 12,
+  "cities": ["Paris", "Lille", "Dijon"]
+},
+{
+  "country": "Germany",
+  "visits": 5,
+  "cities": ["Berlin", "Hamburg", "Stuttgart"]
+},
 ]
+#at first i tried travel_log[0][country] = country live and you learn right
+def add_new_country(country, int, cities):
+    travel_log.append(
+        {
+            "country" : country,
+            "visits" : int,
+            "cities" : cities
+        }
+    )
+    
 
-print(travel_log[1]["times_visited"])
+add_new_country("Russia", 2, ["Moscow", "St.Peter"])
+#print(travel_log)
 
