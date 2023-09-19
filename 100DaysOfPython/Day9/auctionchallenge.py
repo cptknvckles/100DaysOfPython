@@ -15,7 +15,6 @@ def set_bidders():
         for bids in bidder_book.values():
             allBids.append(bids)
         max_bid = allBids[0]
-        highest_bidder = None
         for i in range(1, len(allBids)):
             if allBids[i] > max_bid:
                 max_bid = allBids[i]
@@ -23,4 +22,3 @@ def set_bidders():
         print(f"The highest bidder is {highest_bidder} \n with a bid of ${max_bid}")
        
 set_bidders()
-    
