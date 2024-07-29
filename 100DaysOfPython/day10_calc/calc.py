@@ -17,21 +17,22 @@ operations = {
 #should put this in a function
 def calculator():
     single_line = []
-    num1 = int(input("Enter first number: "))
+    num1 = float(input("Enter first number: "))
     for operands in operations:
         single_line.append(operands)
     print(" ".join(single_line))
     keep_going = True
     while keep_going:
-        operand_symbol = input('choose operation again: ')
-        num2 = int(input("Enter next number: "))
+        operand_symbol = input('choose operation: ')
+        num2 = float(input("Enter next number: "))
         answer = operations[operand_symbol](num1,num2)
         print(f"{num1} {operand_symbol} {num2} = {answer}")
 
         if input(f'y/n continue with {answer}, or exit: ') == 'y':
             num1 = answer
+            calculator()
         else:
             print('see ya!')
             keep_going = False
-            calculator()
+            
 calculator()
