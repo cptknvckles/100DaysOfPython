@@ -1,10 +1,7 @@
 #ChatGPT looked over my code and added slight enhancments lol added more emojis and proper grammar
 
 import random as r
-import os
 
-def clear_screen():
-    os.system('clear')
 
 def draw_initial_card():
     """Returns a random card from the deck"""
