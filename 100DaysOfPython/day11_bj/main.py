@@ -47,7 +47,7 @@ def play_game():
         comp_score = calculate_score(comp_cards)
 
         print(f'Your cards: {user_cards}, current score: {user_score}')
-        print(f'AI\'s first card: {comp_cards[0]}')
+        print(f'AI\'s showing card: {comp_cards[0]}')
 
         if comp_score == 0 or user_score > 21:
             is_game_over = True
@@ -69,5 +69,6 @@ def play_game():
     compare(user_score, comp_score)
 
 while input('Do you want to play a round of BlackJack? (y/n): ') == 'y':
+    print('\n * 20')
     print('------------------------------')
     play_game()
